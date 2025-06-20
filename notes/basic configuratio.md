@@ -81,3 +81,21 @@ Sw-Floor-1(config-if)# ip address 192.168.1.20 255.255.255.0
 Sw-Floor-1(config-if)# no shutdown
 Sw-Floor-1(config-if)# exit
 Sw-Floor-1(config)# ip default-gateway 192.168.1.1
+
+
+
+.     TO SECURE PRIVILEGED EXEC ACCESS
+To secure privileged EXEC access, use the enable secret password global config command, as shown in the example.
+
+ Sw-Floor-1# configure terminal
+Sw-Floor-1(config)# enable secret class
+Sw-Floor-1(config)# exit
+Sw-Floor-1#
+
+FOR user EXEC mode
+Sw-Floor-1# configure terminal
+Sw-Floor-1(config)# line console 0
+Sw-Floor-1(config-line)# password cisco
+Sw-Floor-1(config-line)# login
+Sw-Floor-1(config-line)# end
+Sw-Floor-1#
