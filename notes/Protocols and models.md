@@ -249,3 +249,52 @@ DATA ACCESS
 Network layer source and destination addresses - Responsible for delivering the IP packet from the original source to the final destination, which may be on the same network or a remote network.
 
 Data link layer source and destination addresses - Responsible for delivering the data link frame from one network interface card (NIC) to another NIC on the same network.
+
+To understand address we shall use the OSI model.
+
+physical: timing and sychronization bits
+Datalink: destination and source address
+Network:  Destination and logical network address
+Transport: Destination and source process network address
+upper layers: encoded and application data
+
+
+The IP packet contains two IP addresses:
+
+Source IP address - The IP address of the sending device, which is the original source of the packet.
+Destination IP address - The IP address of the receiving device, which is the final destination of the packet.
+
+An IP address contains two parts:
+
+Network portion (IPv4) or Prefix (IPv6) - The left-most part of the address that indicates the network in which the IP address is a member. All devices on the same network will have the same network portion of the address.
+
+Host portion (IPv4) or Interface ID (IPv6) - The remaining part of the address that identifies a specific device on the network. This portion is unique for each device or interface on the network.
+
+Note: The subnet mask (IPv4) or prefix-length (IPv6) is used to identify the network portion of an IP address from the host portion.
+
+
+Role of the Data Link Layer Addresses - Same IP Network
+
+When the sender and receiver of the IP packet are on the same network, the data link frame is sent directly to the receiving device. On an Ethernet network, the data link addresses are known as Ethernet Media Access Control (MAC) addresses.
+
+Role of the Data Link Layer Addresses - Same IP Network
+
+When the sender and receiver of the IP packet are on the same network, the data link frame is sent directly to the receiving device. On an Ethernet network, the data link addresses are known as Ethernet Media Access Control (MAC) addresses.
+
+Destination MAC address - When the receiving device is on the same network as the sending device, this is the data link address of the receiving device.
+The MAC address are written in hexadecimal.
+
+Role of the Data Link Layer Addresses - Different IP Networks
+
+When the sender and receiver of the IP packet are on different networks, the Ethernet data link frame cannot be sent directly to the destination host because the host is not directly reachable in the network of the sender. The Ethernet frame must be sent to another device known as the router or default gateway.   The router or the gateway are on the same network so they have a MAC address that is on the same network as the sender.
+
+Wireshark is a software protocol analyzer, or "packet sniffer" application, used for network troubleshooting, analysis, software and protocol development, and education. 
+
+
+
+
+
+
+
+
+
