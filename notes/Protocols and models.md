@@ -294,6 +294,60 @@ Wireshark is a software protocol analyzer, or "packet sniffer" application, used
 
 
 
+ Summary: Addresses in TCP/IP Layers
+Layer	Address Used	            Where Used (Leftmost → Rightmost)                    	Purpose
+Application Layer	          No physical/logical address	Uses domain names                  	Identifies the service or application.
+Transport Layer	        Port Numbers (e.g., 80, 443)	Source Port → Destination Port        	Identifies processes/services on devices.
+Internet Layer	IP Addresses (IPv4/IPv6)	Source IP → Destination IP	                Logical addressing for end-to-end delivery across networks.                                                                             networks.
+Network Access Layer	MAC Addresses (Physical)	Source MAC → Destination MAC	       Physical addressing for delivery within the same network (LAN).
+
+✅ Leftmost → Rightmost Addressing (Step by Step)
+MAC Address (Layer 2 – Network Access)
+
+Leftmost: Source MAC
+
+Rightmost: Destination MAC
+
+📌 What they do: Deliver the frame within the same local network (LAN). MAC changes at each hop (router).
+
+IP Address (Layer 3 – Internet)
+
+Leftmost: Source IP
+
+Rightmost: Destination IP
+
+📌 What they do: Provide end-to-end addressing across networks. IP stays constant unless NAT is used.
+
+Port Numbers (Layer 4 – Transport)
+
+Leftmost: Source Port
+
+Rightmost: Destination Port
+
+📌 What they do: Identify specific applications/services (e.g., HTTP = port 80, HTTPS = port 443).
+
+Domain Names (Layer 7 – Application)
+
+Example: www.example.com
+
+📌 What they do: Human-friendly name resolved to an IP using DNS. Not part of headers but used by apps.
+
+📖 Example Packet (Full Stack)
+Layer	Address Info
+Application	www.example.com (resolved via DNS)
+Transport	Source Port: 54321 → Destination Port: 80
+Internet	Source IP: 192.168.1.5 → Destination IP: 142.250.190.78
+Network Access	Source MAC: AA:BB:CC:DD:EE:01 → Destination MAC: AA:BB:CC:DD:EE:FF
+
+🧠 Key Things To Remember
+🌍 IP Address (Layer 3): Global unique, stays the same end-to-end.
+
+🏠 MAC Address (Layer 2): Local, changes every time a packet goes through a router.
+
+🎯 Port Numbers (Layer 4): For multiple apps on the same device.
+
+🌐 Domain Name (Layer 7): Only human-readable, translated to IP.
+
 
 
 
