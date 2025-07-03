@@ -225,3 +225,10 @@ International Telecommunications Union-Telecommunication Standardization Sector 
 
 Protocol Data Units
 The form that a piece of data takes at any layer is called a protocol data unit (PDU). During encapsulation, each succeeding layer encapsulates the PDU that it receives from the layer above in accordance with the protocol being used. At each stage of the process, a PDU has a different name to reflect its new functions. Although there is no universal naming convention for PDUs, in this course, the PDUs are named according to the protocols of the TCP/IP suite. The PDUs for each form of data are shown in the figure
+
+
+Data - The general term for the PDU used at the application layer
+Segment - Transport layer PDU
+Packet - Network layer PDU
+Frame - Data Link layer PDU
+Bits - Physical layer PDU used when physically transmitting data over the medium
