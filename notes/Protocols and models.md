@@ -232,3 +232,20 @@ Segment - Transport layer PDU
 Packet - Network layer PDU
 Frame - Data Link layer PDU
 Bits - Physical layer PDU used when physically transmitting data over the medium
+
+
+ De-encapsulation is the process used by a receiving device to remove one or more of the protocol headers. The data is de-encapsulated as it moves up the stack toward the end-user application.
+
+
+ Summary Table (TCP/IP Layers and their PDUs)
+TCP/IP Model Layer	                 OSI Model Equivalent                               	PDU
+Application                   	Application, Presentation, Session	                      Data
+Transport                      	Transport	                                                Segment (TCP) / Datagram (UDP)
+Internet	                      Network	                                                  Packet
+Network Access	                Data Link + Physical	                                    Frame (L2), Bits (L1)
+
+DATA ACCESS
+
+Network layer source and destination addresses - Responsible for delivering the IP packet from the original source to the final destination, which may be on the same network or a remote network.
+
+Data link layer source and destination addresses - Responsible for delivering the data link frame from one network interface card (NIC) to another NIC on the same network.
