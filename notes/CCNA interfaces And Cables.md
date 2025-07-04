@@ -32,3 +32,5 @@ the fiber cables send and transmit data in this format
  The fiber cables are in multimode and singlemode.  The multimode has a wider glass core than the singlemode.
  The singlemode allows connection to further distances than the multimode.
  
+
+  Dispersion refers to the spreading out of a light pulse over time. Increased dispersion means increased loss of signal strength. MMF has a greater dispersion than SMF. That is why MMF can only travel up to 500 meters before signal loss.
