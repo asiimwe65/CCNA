@@ -28,3 +28,12 @@ Addressing - Provides source and destination addressing for transporting the Lay
 Error detection - Includes a trailer used to detect transmission errors.
 
 The MAC sublayer also provides media access control, allowing multiple devices to communicate over a shared (half-duplex) medium. Full-duplex communications do not require access control.
+
+
+PROVIDING ACCESS TO MEDIA
+ a router performs the following Layer 2 functions:
+
+Accepts a frame from a medium
+De-encapsulates the frame
+Re-encapsulates the packet into a new frame
+Forwards the new frame appropriate to the medium of that segment of the physical network
