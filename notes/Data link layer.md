@@ -37,3 +37,16 @@ Accepts a frame from a medium
 De-encapsulates the frame
 Re-encapsulates the packet into a new frame
 Forwards the new frame appropriate to the medium of that segment of the physical network
+
+TOPOLOGIES
+
+POINT-TO-POINT
+This is the simplest and most common WAN topology. It consists of a permanent link between two endpoints.
+
+HUB AND SPOKE
+This is a WAN version of the star topology in which a central site interconnects branch sites through the use of point-to-point links. Branch sites cannot exchange data with other branch sites without going through the central site.
+
+MESH
+This topology provides high availability but requires that every end system is interconnected to every other system. Therefore, the administrative and physical costs can be significant. Each link is essentially a point-to-point link to the other node.
+
+Note: A point-to-point connection over Ethernet requires the device to determine if the incoming frame is destined for this node.
