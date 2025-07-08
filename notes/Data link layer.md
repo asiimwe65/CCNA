@@ -100,3 +100,21 @@ The PC1 NIC sends the Ethernet Frame when the medium is available
 
 The Ethernet hub receives and sends the frame. An Ethernet hub is also known as a multiport repeater. Any bits received on an incoming port are regenerated and sent out all other ports.
 All devices attached to the hub will receive the frame. However, because the frame has a destination data link address for PC3, only that device will accept and copy in the entire frame. All other device NICs will ignore the frame
+
+Examples of contention-based access networks include the following:
+
+Wireless LAN (uses CSMA/CA)
+Legacy bus-topology Ethernet LAN (uses CSMA/CD)
+Legacy Ethernet LAN using a hub (uses CSMA/CD)
+
+THE FRAME
+Although there are many different data link layer protocols that describe data link layer frames, each frame type has three basic parts:
+Header
+Data
+Trailer
+
+All data link layer protocols encapsulate the data within the data field of the frame. However, the structure of the frame and the fields contained in the header and trailer vary according to the protocol.
+
+There is no one frame structure that meets the needs of all data transportation across all types of media. Depending on the environment, the amount of control information needed in the frame varies to match the access control requirements of the media and logical topology. For example, a WLAN frame must include procedures for collision avoidance and therefore requires additional control information when compared to an Ethernet frame.
+
+In a fragile environment, more controls are needed to ensure delivery. The header and trailer fields are larger as more control information is needed.
