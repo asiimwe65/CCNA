@@ -118,3 +118,18 @@ All data link layer protocols encapsulate the data within the data field of the 
 There is no one frame structure that meets the needs of all data transportation across all types of media. Depending on the environment, the amount of control information needed in the frame varies to match the access control requirements of the media and logical topology. For example, a WLAN frame must include procedures for collision avoidance and therefore requires additional control information when compared to an Ethernet frame.
 
 In a fragile environment, more controls are needed to ensure delivery. The header and trailer fields are larger as more control information is needed.
+
+The standards for a specific data link protocol define the actual frame format.
+
+Frame start and stop indicator flags - Used to identify the beginning and end limits of the frame.
+Addressing - Indicates the source and destination nodes on the media.
+Type - Identifies the Layer 3 protocol in the data field.
+Control - Identifies special flow control services such as quality of service (QoS). QoS gives forwarding priority to certain types of messages. For example, voice over IP (VoIP) frames normally receive priority because they are sensitive to delay.
+Data - Contains the frame payload (i.e., packet header, segment header, and the data).
+Error Detection - Included after the data to form the trailer.
+
+
+
+Data link layer protocols add a trailer to the end of each frame. In a process called error detection, the trailer determines if the frame arrived without error. It places a logical or mathematical summary of the bits that comprise the frame in the trailer. The data link layer adds error detection because the signals on the media could be subject to interference, distortion, or loss that would substantially change the bit values that those signals represent.
+
+A transmitting node creates a logical summary of the contents of the frame, known as the cyclic redundancy check (CRC) value. This value is placed in the frame check sequence (FCS) field to represent the contents of the frame. In the Ethernet trailer, the FCS provides a method for the receiving node to determine whether the frame experienced transmission errors.
