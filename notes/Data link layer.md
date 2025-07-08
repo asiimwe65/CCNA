@@ -69,3 +69,34 @@ Both devices can transmit and receive on the media but cannot do so simultaneous
 Full-duplex communication
 
 Both devices can simultaneously transmit and receive on the shared media. The data link layer assumes that the media is available for transmission for both nodes at any time. Ethernet switches operate in full-duplex mode by default, but they can operate in half-duplex if connecting to a device such as an Ethernet hub
+
+ACCESS CONTROL METHODS
+A multiaccess network is a network that can have two or more end devices attempting to access the network simultaneously.
+
+
+Contention-based access
+
+In contention-based multiaccess networks, all nodes are operating in half-duplex, competing for the use of the medium. However, only one device can send at a time. Therefore, there is a process if more than one device transmits at the same time. Examples of contention-based access methods include the following:
+
+Carrier sense multiple access with collision detection (CSMA/CD) used on legacy bus-topology Ethernet LANs
+Carrier sense multiple access with collision avoidance (CSMA/CA) used on Wireless LANs
+
+In a controlled-based multiaccess network, each node has its own time to use the medium. These deterministic types of legacy networks are inefficient because a device must wait its turn to access the medium. Examples of multiaccess networks that use controlled access include the following:
+
+Legacy Token Ring
+Legacy ARCNET
+
+
+
+CSMA/CD
+
+These networks operate in half-duplex mode, meaning only one device can send or receive at a time. This requires a process to govern when a device can send and what happens when multiple devices send at the same time.
+
+ILLUSTRAION OF HOW A CSMA/CD WORKS
+
+PC1 has an Ethernet frame to send to PC3. The PC1 NIC needs to determine if any device is transmitting on the medium. If it does not detect a carrier signal (in other words, it is not receiving transmissions from another device), it will assume the network is available to send.
+
+The PC1 NIC sends the Ethernet Frame when the medium is available
+
+The Ethernet hub receives and sends the frame. An Ethernet hub is also known as a multiport repeater. Any bits received on an incoming port are regenerated and sent out all other ports.
+All devices attached to the hub will receive the frame. However, because the frame has a destination data link address for PC3, only that device will accept and copy in the entire frame. All other device NICs will ignore the frame
