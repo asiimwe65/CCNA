@@ -16,4 +16,10 @@ If the size of a transmitted frame is less than the minimum, or greater than the
 
 
 ETHERNET FRAME FIELDS
-Start Frame: used for synchronization and btn sending and receiving of messages.
+Start Frame: used for synchronization and btn sending and receiving of messages./ to get attention of the receiving nodes.
+Destination MAC address field : It is used to determine if a frame is addressed to them and if it is matching.
+Source MAC address field : identifies the originating NIC or interface of the frame.
+TYPE/LENGTH: identifies the upper layer protocols encapsulated in the frame.
+Data field: contains the encapsulated data from from the higher layers. All  frames must be 64 bits long. If it is too small additional bits are added called a pad.
+FRAME CHECK: This one id used to check  for errors in the sequence check.
+
