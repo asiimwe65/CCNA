@@ -30,3 +30,14 @@ An Ethernet MAC address consists of a 48-bit binary value. Hexadecimal is used t
 When using hexadecimal, leading zeroes are always displayed to complete the 8-bit representation. For example, the binary value 0000 1010 is shown in hexadecimal as 0A.
 You may have to convert between decimal and hexadecimal values. If such conversions are required, convert the decimal or hexadecimal value to binary, and then to convert the binary value to either decimal or hexadecimal as appropriate.
 
+In an Ethernet LAN, every network device is connected to the same, shared media. The MAC address is used to identify the physical source and destination devices (NICs) on the local network segment
+MAC addressing provides a method for device identification at the data link layer of the OSI model.
+
+All MAC addresses must be unique to the Ethernet device or Ethernet interface. To ensure this, all vendors that sell Ethernet devices must register with the IEEE to obtain a unique 6 hexadecimal (i.e., 24-bit or 3-byte) code called the organizationally unique identifier (OUI).
+
+When a vendor assigns a MAC address to a device or Ethernet interface, the vendor must do as follows:
+
+Use its assigned OUI as the first 6 hexadecimal digits.
+Assign a unique value in the last 6 hexadecimal digits.
+
+lt is the responsibility of the vendor to ensure that none of its devices be assigned the same MAC address. However, it is possible for duplicate MAC addresses to exist because of mistakes made during manufacturing, mistakes made in some virtual machine implementation methods, or modifications made using one of several software tools. In any case, it will be necessary to modify the MAC address with a new NIC or make modifications via software.
