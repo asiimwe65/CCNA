@@ -52,3 +52,11 @@ When the computer boots up, the NIC copies its MAC address from ROM into RAM. Wh
 Source MAC address - This is the MAC address of the source device NIC.
 Destination MAC address - This is the MAC address of the destination device NIC.
 Note: Ethernet NICs will also accept frames if the destination MAC address is a broadcast or a multicast group of which the host is a member.
+
+
+UNICAST MAC ADDRESS
+ For a unicast packet to be sent and received, a destination IP address must be in the IP packet header. A corresponding destination MAC address must also be present in the Ethernet frame header. The IP address and MAC address combine to deliver data to one specific destination host.
+
+ The process that a source host uses to determine the destination MAC address associated with an IPv4 address is known as Address Resolution Protocol (ARP). 
+
+ The process that a source host uses to determine the destination MAC address associated with an IPv6 address is known as Neighbor Discovery (ND).
