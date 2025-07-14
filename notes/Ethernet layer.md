@@ -84,3 +84,103 @@ It is flooded out all Ethernet switch ports except the incoming port, unless the
 It is not forwarded by a router, unless the router is configured to route multicast packets.
 
 The range of IPv4 multicast addresses is 224.0.0.0 to 239.255.255.255
+
+
+MAC ADDRESS TABLE
+The switch dynamically builds the MAC address table by examining the source MAC address of the frames received on a port. The switch forwards frames by searching for a match between the destination MAC address in the frame and an entry in the MAC address table.
+
+🌟 1. What is an Ethernet Switch?
+An Ethernet switch is a device that connects multiple devices (PCs, printers, servers, etc.) on a Local Area Network (LAN) and allows them to communicate efficiently.
+It works at Layer 2 (Data Link Layer) of the OSI model and uses MAC addresses to make decisions.
+
+🔥 2. Switch Learning (MAC Address Learning)
+When a switch is powered on, its MAC address table (or CAM table) is empty.
+Here’s what happens step by step:
+
+📦 Step 1: A frame arrives at the switch
+
+The switch checks the frame’s source MAC address and the port it came from.
+
+📝 Step 2: The switch records this information
+
+It stores the MAC address and associates it with the port in its MAC address table.
+
+Example:
+
+MAC Address	Port
+00:11:22:33:44:55	1
+AA:BB:CC:DD:EE:FF	3
+
+🎯 Now the switch knows where that device is.
+
+📤 3. Switch Forwarding (Frame Forwarding)
+When the switch receives a frame it must deliver:
+
+✅ If the destination MAC address is in the MAC table:
+
+The switch forwards the frame directly to the associated port.
+This is called unicast forwarding.
+📌 Efficient: Only the target device receives the frame.
+
+❌ If the destination MAC address is NOT in the MAC table:
+
+The switch floods the frame out of all ports except the one it arrived on.
+📌 This is because the switch doesn’t yet know where the destination is.
+
+🚀 Frame Forwarding Methods on Cisco Switches
+There are three main methods:
+
+1️⃣ Store-and-Forward Switching
+✅ How it works:
+
+The switch receives the entire frame, including the trailer (CRC).
+
+It checks for errors using the Cyclic Redundancy Check (CRC).
+
+If the frame has no errors, it forwards it.
+
+If the frame has errors, it discards it.
+
+📌 Key features:
+
+Performs error checking (CRC).
+
+Supports Quality of Service (QoS) because the full frame is available for inspection.
+
+Introduces a small latency since it waits for the whole frame.
+
+🎯 Use case: Default on Cisco switches (modern models).
+
+2️⃣ Cut-Through Switching
+✅ How it works:
+
+The switch starts forwarding the frame as soon as it reads the destination MAC address (first 6 bytes of the frame header).
+
+It does not wait for the entire frame or check for errors.
+
+📌 Key features:
+
+Very low latency (ideal for high-speed networks).
+
+No error checking – corrupted frames are forwarded.
+
+Faster but less reliable compared to store-and-forward.
+
+🎯 Use case: Environments where speed is more critical than error checking (like high-performance computing).
+
+3️⃣ Fragment-Free Switching (Modified Cut-Through)
+✅ How it works:
+
+The switch waits to read the first 64 bytes of the frame before forwarding.
+
+Why 64 bytes? Because most Ethernet collisions and errors occur in the first 64 bytes.
+
+Helps avoid forwarding frames damaged during collisions.
+
+📌 Key features:
+
+Balances speed and reliability.
+
+Checks for collision fragments but not full CRC.
+
+🎯 Use case: Older Cisco switches or networks prone to collisions.
