@@ -237,3 +237,94 @@ Memory Allocation	             Fixed per port	                                  
 Efficiency	                     Less efficient	                                             More efficient
 Head-of-Line Blocking	         Possible	                                                 Reduced/avoided
 Complexity	                     Simple	                                                      More complex 
+
+🚀 1. What Are Duplex and Speed?
+These are Ethernet interface settings that control how a device (switch, PC, router) communicates over a link.
+
+⚡ A. Speed
+Speed defines the rate of data transfer on a network link.
+
+📌 Common Ethernet speeds:
+
+10 Mbps (Ethernet)
+
+100 Mbps (Fast Ethernet)
+
+1 Gbps (1000 Mbps) (Gigabit Ethernet)
+
+10 Gbps (10GigE)
+
+✅ Modern switches usually support auto-negotiation for speed.
+
+🔁 B. Duplex
+Duplex defines how data flows on the link:
+
+1️⃣ Half-Duplex
+Data can flow in one direction at a time.
+
+Devices must take turns to send and receive data.
+
+Uses CSMA/CD (Carrier Sense Multiple Access with Collision Detection) to handle collisions.
+
+📌 Used in older hubs and legacy devices.
+
+2️⃣ Full-Duplex
+Data flows both directions simultaneously.
+
+✅ No collisions because there are separate send and receive channels.
+
+Much faster and more efficient.
+
+📌 Standard in modern switches and NICs.
+
+🛠️ 2. Duplex and Speed Settings on Cisco Switches
+You can configure them in 3 ways:
+
+Setting	Description
+Auto	Switch negotiates duplex & speed automatically (default).
+Manual	You set fixed speed and duplex values.
+Mixed	One side auto, other side manual (can cause problems).
+
+🔥 Why Manual Settings Can Cause Problems
+If one side is set to manual (e.g., 100Mbps Full-Duplex) and the other is auto, the auto side may:
+
+Detect the speed correctly.
+
+Fail to detect duplex → defaults to Half-Duplex.
+
+⚠️ This mismatch leads to duplex mismatch problems:
+
+Collisions
+
+Late collisions
+
+Poor performance (slow speeds, packet loss)
+
+📘 Commands (Cisco IOS)
+✅ To view current settings:
+
+css
+Copy
+Edit
+show interfaces [interface-id] status
+✅ To manually set speed & duplex:
+
+kotlin
+Copy
+Edit
+interface FastEthernet 0/1
+ speed 100
+ duplex full
+✅ To return to auto-negotiation:
+
+vbnet
+Copy
+Edit
+interface FastEthernet 0/1
+ speed auto
+ duplex auto
+🎯 Summary Table
+Feature	                  Half-Duplex	                             Full-Duplex
+Data Flow	              One direction at a time                  	Both directions simultaneously
+Collisions	              Possible (CSMA/CD used)                   None
+Efficiency	              Lower                                  	Higher
