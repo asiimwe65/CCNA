@@ -23,3 +23,10 @@ TYPE/LENGTH: identifies the upper layer protocols encapsulated in the frame.
 Data field: contains the encapsulated data from from the higher layers. All  frames must be 64 bits long. If it is too small additional bits are added called a pad.
 FRAME CHECK: This one id used to check  for errors in the sequence check.
 
+
+
+MAC ADDRESS AND HEXADECIMAL
+An Ethernet MAC address consists of a 48-bit binary value. Hexadecimal is used to identify an Ethernet address because a single hexadecimal digit represents four binary bits. Therefore, a 48-bit Ethernet MAC address can be expressed using only 12 hexadecimal values.
+When using hexadecimal, leading zeroes are always displayed to complete the 8-bit representation. For example, the binary value 0000 1010 is shown in hexadecimal as 0A.
+You may have to convert between decimal and hexadecimal values. If such conversions are required, convert the decimal or hexadecimal value to binary, and then to convert the binary value to either decimal or hexadecimal as appropriate.
+
