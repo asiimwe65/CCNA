@@ -74,3 +74,13 @@ If the encapsulated data is an IPv4 broadcast packet, this means the packet cont
  the source host sends an IPv4 broadcast packet to all devices on its network. The IPv4 destination address is a broadcast address, 192.168.1.255. When the IPv4 broadcast packet is encapsulated in the Ethernet frame, the destination MAC address is the broadcast MAC address of FF-FF-FF-FF-FF-FF in hexadecimal (48 ones in binary).
 
 DHCP for IPv4 is an example of a protocol that uses Ethernet and IPv4 broadcast addresses.
+
+MULTICAST MAC ADDRESS 
+The features of an Ethernet multicast are as follows:
+
+There is a destination MAC address of 01-00-5E when the encapsulated data is an IPv4 multicast packet and a destination MAC address of 33-33 when the encapsulated data is an IPv6 multicast packet.
+There are other reserved multicast destination MAC addresses for when the encapsulated data is not IP, such as Spanning Tree Protocol (STP) and Link Layer Discovery Protocol (LLDP).
+It is flooded out all Ethernet switch ports except the incoming port, unless the switch is configured for multicast snooping.
+It is not forwarded by a router, unless the router is configured to route multicast packets.
+
+The range of IPv4 multicast addresses is 224.0.0.0 to 239.255.255.255
