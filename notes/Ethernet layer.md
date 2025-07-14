@@ -184,3 +184,56 @@ Balances speed and reliability.
 Checks for collision fragments but not full CRC.
 
 🎯 Use case: Older Cisco switches or networks prone to collisions.
+
+
+🧠 What is Memory Buffering in Switching?
+When multiple frames arrive at a switch faster than it can process or forward them, they are temporarily stored in memory buffers.
+
+📦 Why?
+To avoid dropping frames when:
+✅ Incoming traffic exceeds outgoing link speed.
+✅ Multiple frames arrive at once for the same destination port.
+
+So buffering gives the switch time to handle congestion.
+
+🔥 Types of Memory Buffering in Switches
+There are two main buffering techniques used in Cisco switches:
+
+1️⃣ Port-Based Memory Buffering (Port-Based or Static Buffering)
+✅ How it works:
+
+Each port on the switch gets its own dedicated memory buffer.
+
+Frames arriving on a port are stored in that port’s buffer if the outgoing port is busy.
+
+📌 Key Characteristics:
+
+Simple design.
+
+A busy destination port causes frames for that port to wait in each source port’s buffer.
+
+⚠️ Limitation: If a high-speed port sends traffic to a low-speed port, frames can pile up and overflow the source port’s buffer (head-of-line blocking).
+
+2️⃣ Shared Memory Buffering (Dynamic Buffering)
+✅ How it works:
+
+All ports share a common memory buffer pool.
+
+Any port can use as much buffer space as needed (depending on traffic load).
+
+Frames are stored in the shared buffer, and the switch keeps track of which frames belong to which ports.
+
+📌 Key Characteristics:
+
+Efficient use of memory—no unused buffer space.
+
+Solves head-of-line blocking problem.
+
+Better for high-performance switches handling bursty traffic.
+
+📘 Summary Table
+Feature	                          Port-Based Buffering	                                      Shared Memory Buffering
+Memory Allocation	             Fixed per port	                                             Dynamic (shared among ports)
+Efficiency	                     Less efficient	                                             More efficient
+Head-of-Line Blocking	         Possible	                                                 Reduced/avoided
+Complexity	                     Simple	                                                      More complex 
