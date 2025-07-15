@@ -31,3 +31,10 @@ LIMITATIONS OF IPv4
 ✅ Lack of end-to-end connectivity – NAT allows multiple devices to share one public IPv4 address, but it hides internal IPs, which breaks direct end-to-end communication needed by some technologies.
 
 ✅ Increased network complexity – NAT prolongs IPv4’s use but adds complexity, latency, and makes troubleshooting harder.
+
+
+improvements that IPv6 provides include the following:
+
+Increased address space - IPv6 addresses are based on 128-bit hierarchical addressing as opposed to IPv4 with 32 bits.
+Improved packet handling - The IPv6 header has been simplified with fewer fields.
+Eliminates the need for NAT - With such a large number of public IPv6 addresses, NAT between a private IPv4 address and a public IPv4 is not needed. This avoids some of the NAT-induced problems experienced by applications that require end-to-end connectivity.
