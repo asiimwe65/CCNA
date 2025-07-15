@@ -9,3 +9,9 @@ De-encapsulation - When the packet arrives at the network layer of the destinati
 
 IP ENCAPSULATION
 The IP header is examined by Layer 3 devices (i.e., routers and Layer 3 switches) as it travels across a network to its destination. It is important to note, that the IP addressing information remains the same from the time the packet leaves the source host until it arrives at the destination host, except when translated by the device performing Network Address Translation (NAT) for IPv4.
+
+These are the basic characteristics of IP:
+
+Connectionless - There is no connection with the destination established before sending data packets.
+Best Effort - IP is inherently unreliable because packet delivery is not guaranteed.
+Media Independent - Operation is independent of the medium (i.e., copper, fiber-optic, or wireless) carrying the data.
