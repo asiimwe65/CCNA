@@ -120,3 +120,33 @@ R1(config)# ip route 10.1.1.0 255.255.255.0 209.165.200.226
 209.165.200.226 = next hop router’s IP
 
 ✅ Limitation: Static routes do not adjust automatically to topology changes. If the path to 10.1.1.0/24 via R2 fails, R1 must be reconfigured to use an alternative path (e.g., via R3).
+
+DYNAMIC ROUTING
+✅ Dynamic routing protocols allow routers to:
+
+Automatically learn about remote networks (including default routes).
+
+Share routing information with other routers.
+
+Adjust to topology changes without manual reconfiguration.
+
+✅ Example:
+
+R1 and R2 use OSPF to exchange information about their connected networks.
+
+If the link between R1 and R2 fails, OSPF automatically finds a new best path through R3.
+
+✅ Features of dynamic routing protocols:
+
+Discover remote networks.
+
+Keep routing tables up to date.
+
+Select the best path to destinations.
+
+Automatically reroute traffic if paths fail.
+
+✅ Common protocols: OSPF, EIGRP.
+
+✅ Note: Networks often use a mix of static routes and dynamic routing for flexibility.
+
