@@ -15,3 +15,13 @@ These are the basic characteristics of IP:
 Connectionless - There is no connection with the destination established before sending data packets.
 Best Effort - IP is inherently unreliable because packet delivery is not guaranteed.
 Media Independent - Operation is independent of the medium (i.e., copper, fiber-optic, or wireless) carrying the data.
+
+IP HEADER FIELDS
+✅ Version – 4 bits set to 0100 to identify IPv4.
+✅ Differentiated Services (DS) – 8 bits for packet priority; includes DSCP (6 bits) and ECN (2 bits).
+✅ Time to Live (TTL) – 8 bits to limit packet lifetime; decremented by routers. If it reaches 0, the packet is dropped and an ICMP error is sent.
+✅ Protocol – 8 bits indicating payload type (e.g., ICMP=1, TCP=6, UDP=17).
+✅ Header Checksum – Detects errors in the IPv4 header.
+✅ Source IPv4 Address – 32 bits specifying the sender’s IP (unicast).
+✅ Destination IPv4 Address – 32 bits specifying the recipient’s IP (unicast, multicast, or broadcast).
+
