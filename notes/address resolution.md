@@ -92,3 +92,39 @@ All devices check if the target IPv4 matches their own.
 Only the device with the matching IPv4 replies.
 
 Routers do not forward ARP broadcasts.
+
+
+IPv6 
+✅ What is IPv6 Neighbor Discovery (ND)?
+
+ND replaces ARP in IPv6 to map IPv6 addresses to MAC addresses.
+
+Uses ICMPv6 messages for address resolution, router discovery, and redirection.
+
+✅ Five ICMPv6 ND Messages:
+
+Neighbor Solicitation (NS): “Who has this IPv6 address? Send me your MAC.”
+
+Neighbor Advertisement (NA): “I have that IPv6 address. Here’s my MAC.”
+
+Router Solicitation (RS): Devices ask routers for info (used in SLAAC).
+
+Router Advertisement (RA): Routers provide network details to devices.
+
+Redirect: For optimizing next-hop routing (not covered in detail).
+
+✅ Address Resolution (like ARP in IPv4):
+
+PC1 sends NS asking for the MAC of PC2’s IPv6 address.
+
+PC2 responds with NA, providing its MAC address.
+
+NS/NA messages use multicast addresses for efficiency.
+
+✅ Defined in RFC 4861
+
+ND allows devices to discover neighbors and routers dynamically.
+
+
+
+
