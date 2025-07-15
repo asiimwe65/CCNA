@@ -23,3 +23,28 @@ IP Packet (Layer 3):
 Source IP: 192.168.10.10
 
 Destination IP: 192.168.10.11
+
+
+
+✅ Remote Network Communication
+
+When sending to a different network, the destination MAC is the default gateway’s (router’s) MAC.
+
+The router uses the IP packet’s destination address to forward it to the next hop.
+
+At each hop, the router:
+
+Decapsulates the incoming frame.
+
+Determines next hop using routing.
+
+Re-encapsulates the packet in a new frame with updated MAC addresses.
+
+✅ Key Processes
+
+IPv4 uses ARP to resolve IP → MAC.
+
+IPv6 uses ICMPv6 Neighbor Discovery (ND) for the same purpose.
+
+The IP addresses stay the same end-to-end; only MAC addresses change at each hop.
+
