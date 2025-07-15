@@ -97,3 +97,26 @@ It checks the destination IP address.
 Searches its routing table for the best (longest match) route.
 
 Forwards the packet to the next hop or destination based on that route entry.
+
+
+✅ A router’s routing table lists all known network destinations and contains three types of entries:
+
+Directly-connected networks – Networks directly attached to the router’s active interfaces (e.g., 192.168.10.0/24).
+
+Remote networks – Networks learned from other routers via manual configuration or dynamic routing protocols (e.g., 10.1.1.0/24).
+
+Default route – A gateway of last resort used when no specific route matches the destination.
+STATIC ROUTING
+✅ Static routes are manually configured entries in a router’s routing table.
+
+✅ Example: On R1, a static route to reach network 10.1.1.0/24 via R2 is set using:
+
+
+
+
+R1(config)# ip route 10.1.1.0 255.255.255.0 209.165.200.226
+10.1.1.0 255.255.255.0 = remote network
+
+209.165.200.226 = next hop router’s IP
+
+✅ Limitation: Static routes do not adjust automatically to topology changes. If the path to 10.1.1.0/24 via R2 fails, R1 must be reconfigured to use an alternative path (e.g., via R3).
