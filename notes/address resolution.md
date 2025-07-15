@@ -48,3 +48,24 @@ IPv6 uses ICMPv6 Neighbor Discovery (ND) for the same purpose.
 
 The IP addresses stay the same end-to-end; only MAC addresses change at each hop.
 
+ARP FUNCTIONS
+✅ ARP Table (or ARP Cache)
+
+A temporary table in RAM that maps IPv4 addresses to MAC addresses.
+
+Used when encapsulating packets into Ethernet frames at the data link layer.
+
+✅ How it works:
+
+Device checks ARP table:
+
+If destination IP is on the same network, it looks up that IP.
+
+If destination IP is on a different network, it looks up the default gateway’s IP.
+
+If a match is found, the MAC address is used as the destination MAC.
+
+If no entry exists, the device sends an ARP request to learn the MAC.
+
+✅ Each ARP table entry = IPv4 address ↔ MAC address mapping (temporarily cached).
+
