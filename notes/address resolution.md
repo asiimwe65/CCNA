@@ -69,3 +69,26 @@ If no entry exists, the device sends an ARP request to learn the MAC.
 
 ✅ Each ARP table entry = IPv4 address ↔ MAC address mapping (temporarily cached).
 
+✅ What is an ARP Request?
+
+Sent when a device needs the MAC address for an IPv4 address not in its ARP table.
+
+Encapsulated directly in an Ethernet frame (no IPv4 header).
+
+✅ Ethernet Frame Header Fields:
+
+Destination MAC: Broadcast FF-FF-FF-FF-FF-FF (all devices on LAN process it).
+
+Source MAC: Sender’s MAC address.
+
+Type: 0x806 (identifies ARP).
+
+✅ Key Behavior:
+
+Switch floods the ARP request to all ports (except incoming).
+
+All devices check if the target IPv4 matches their own.
+
+Only the device with the matching IPv4 replies.
+
+Routers do not forward ARP broadcasts.
