@@ -25,3 +25,9 @@ IP HEADER FIELDS
 ✅ Source IPv4 Address – 32 bits specifying the sender’s IP (unicast).
 ✅ Destination IPv4 Address – 32 bits specifying the recipient’s IP (unicast, multicast, or broadcast).
 
+LIMITATIONS OF IPv4
+✅ IPv4 address depletion – The ~4 billion IPv4 addresses are not enough for the growing number of devices, always-on connections, and global internet expansion.
+
+✅ Lack of end-to-end connectivity – NAT allows multiple devices to share one public IPv4 address, but it hides internal IPs, which breaks direct end-to-end communication needed by some technologies.
+
+✅ Increased network complexity – NAT prolongs IPv4’s use but adds complexity, latency, and makes troubleshooting harder.
