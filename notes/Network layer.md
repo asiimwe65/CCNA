@@ -38,3 +38,15 @@ improvements that IPv6 provides include the following:
 Increased address space - IPv6 addresses are based on 128-bit hierarchical addressing as opposed to IPv4 with 32 bits.
 Improved packet handling - The IPv6 header has been simplified with fewer fields.
 Eliminates the need for NAT - With such a large number of public IPv6 addresses, NAT between a private IPv4 address and a public IPv4 is not needed. This avoids some of the NAT-induced problems experienced by applications that require end-to-end connectivity.
+
+IPv6 header field
+
+✅ Version – 4 bits set to 0110 to identify IPv6.
+✅ Traffic Class – 8 bits, same as IPv4 Differentiated Services (DS) field.
+✅ Flow Label – 20 bits to mark packets for special router handling.
+✅ Payload Length – 16 bits indicating the size of the payload (not the 40-byte IPv6 header).
+✅ Next Header – 8 bits, same as IPv4 Protocol field; identifies the upper-layer protocol.
+✅ Hop Limit – 8 bits replacing IPv4 TTL; decremented at each router, no header checksum needed.
+✅ Source IPv6 Address – 128 bits identifying the sender.
+✅ Destination IPv6 Address – 128 bits identifying the receiver.
+
