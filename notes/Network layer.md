@@ -50,3 +50,24 @@ IPv6 header field
 ✅ Source IPv6 Address – 128 bits identifying the sender.
 ✅ Destination IPv6 Address – 128 bits identifying the receiver.
 
+HOST FORWARDING DECISION
+✅ Packets are created at the source host, which uses its own routing table to direct packets to the destination.
+
+✅ The network layer directs packets to:
+
+Itself – Uses loopback address (127.0.0.1 for IPv4, ::1 for IPv6) to test the TCP/IP stack.
+
+Local host – Destination is on the same network (same network address).
+
+Remote host – Destination is on a different network (different network address).
+
+✅ The source device decides if a destination is local or remote:
+
+IPv4 – Uses its IP address, subnet mask, and the destination IP.
+
+IPv6 – Relies on the local router to advertise the network prefix.
+
+✅ Local hosts (same network) communicate directly via a switch or WAP without needing a router.
+
+✅ Remote hosts (different network) require routing. The packet is sent to the default gateway (router) to find the best path to the destination.
+
