@@ -323,3 +323,79 @@ Organizations can request IP addresses from their RIR or get them from their ISP
 ✔ Classful Addressing: Obsolete, replaced by CIDR.
 ✔ Public IPs: Unique and managed globally by IANA → RIRs → ISPs.
 
+
+ Broadcast Domains and Network Segmentation
+📌 What is a Broadcast Domain?
+A broadcast domain is a part of a network where a broadcast packet sent by one device is received by all other devices.
+
+In Ethernet LANs, devices use broadcasts for:
+
+ARP (finding MAC addresses for known IPv4 addresses).
+
+DHCP (discovering and communicating with a DHCP server).
+
+Switches propagate broadcasts to all connected devices except the incoming port.
+
+🚨 Problem: Large Broadcast Domains
+In large networks (e.g., 400 users on a single LAN), excessive broadcast traffic can:
+
+Slow down network performance.
+
+Overload devices as each must process every broadcast packet.
+
+Example: A network 172.16.0.0/16 (400 users) has all users in one broadcast domain, leading to congestion.
+
+✅ Solution: Segmenting Broadcast Domains (Subnetting)
+Routers do not forward broadcasts across interfaces. Each router interface connects to a separate broadcast domain.
+
+By dividing a large network into smaller subnets, broadcasts are limited to smaller groups.
+
+Example:
+
+Original network: 172.16.0.0/16 (400 users).
+
+Divided into two subnets:
+
+172.16.0.0/24 (LAN 1, 200 users)
+
+172.16.1.0/24 (LAN 2, 200 users).
+
+Broadcasts in LAN 1 do not affect LAN 2.
+
+🌟 Benefits of Subnetting
+📉 Reduces broadcast traffic for better performance.
+
+🔐 Enables security policies between subnets (control which can communicate).
+
+💥 Limits impact of issues (malicious traffic, misconfigurations, or hardware faults).
+
+📊 Helps organize the network logically.
+
+📌 Examples of Subnetting Strategies
+🏢 By Location
+Each floor of a building has its own subnet:
+
+1st floor: 10.0.1.0/24
+
+2nd floor: 10.0.2.0/24
+
+3rd floor: 10.0.3.0/24
+
+4th floor: 10.0.4.0/24
+
+5th floor: 10.0.5.0/24
+
+Each subnet connects to a separate router interface.
+
+👥 By Group or Function
+HR, Finance, and IT departments have their own subnets.
+
+💻 By Device Type
+Servers, printers, and user devices are placed on separate subnets.
+
+📢 Key Takeaways
+✔ Broadcast domains are limited by routers; switches forward broadcasts within their domain.
+✔ Large domains lead to network congestion—subnetting helps fix this.
+✔ Subnetting creates smaller, manageable networks, improving performance and security.
+✔ Learning how to subnet is critical for network administrators.
+
