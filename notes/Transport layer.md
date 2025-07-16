@@ -99,3 +99,93 @@ Segments Called	Segments	Datagrams
 TCP = Tracks, Confirms, Protects.
 
 UDP = Untracked, Delivered Quickly, Probably
+
+
+
+
+📦 TCP Features (What Makes TCP Reliable?)
+TCP is like a “polite, careful delivery service”. It doesn’t just throw data on the network and hope for the best. It tracks, verifies, and manages every piece of data.
+
+Here are the key TCP features:
+
+🔗 1. Establishes a Session
+TCP is connection-oriented.
+
+Before sending data, it uses a 3-way handshake:
+1️⃣ SYN (Hello, I want to talk)
+2️⃣ SYN-ACK (OK, I’m ready to talk)
+3️⃣ ACK (Great, let’s start sending data)
+✅ This sets up a reliable path between the sender and receiver.
+
+📌 Why? It ensures both devices are ready and agree on how much data to send.
+
+📬 2. Ensures Reliable Delivery
+Data can get lost or corrupted in the network.
+
+TCP:
+✔ Adds a Sequence Number to every segment.
+✔ Waits for an Acknowledgment (ACK) from the receiver.
+✔ Retransmits any segment if no ACK is received within a timeout.
+
+📌 Like registered mail: If a package is lost, it’s resent.
+
+🔢 3. Provides Same-Order Delivery
+In a network, packets can take different paths and arrive out of order.
+
+TCP uses Sequence Numbers to reassemble segments in the correct order at the destination.
+
+📌 Even if Segment #3 arrives before Segment #2, TCP fixes it.
+
+🛑 4. Supports Flow Control
+Prevents the sender from overwhelming the receiver.
+
+The receiver tells the sender how much data it can handle using the Window Size field in the header.
+
+📌 This is called Sliding Window Protocol.
+
+📌 Example: Like asking your friend to slow down reading instructions because you’re still writing them down.
+
+📄 TCP Header
+The TCP header adds 20 bytes of overhead (sometimes more if options are used).
+
+Here’s a simplified breakdown:
+
+Field	Size (bits)	What it does
+Source Port	16	App port number of sender (e.g., 80 for HTTP).
+Destination Port	16	App port number of receiver.
+Sequence Number	32	Tracks data segments for ordering.
+Acknowledgment #	32	Confirms receipt of data.
+Header Length	4	Size of TCP header.
+Flags/Control Bits	6	Includes SYN, ACK, FIN, RST for managing the session.
+Window Size	16	Used for flow control.
+Checksum	16	Verifies integrity of data.
+Urgent Pointer	16	Indicates urgent data (rarely used).
+Options	Variable	Used for things like maximum segment size (MSS).
+
+🏆 Applications that use TCP
+TCP is used where reliability is critical:
+✅ Web browsing (HTTP, HTTPS)
+✅ Email (SMTP, IMAP, POP3)
+✅ File transfer (FTP)
+✅ Secure Shell (SSH)
+
+📌 Why? Because all of these require data to arrive completely and in order.
+
+🏁 CCNA Exam Quick Cheat Sheet
+Feature	TCP Does It?
+Connection-oriented?	✅ Yes (3-way handshake)
+Reliable delivery?	✅ Yes (ACKs & Retransmit)
+Flow control?	✅ Yes (Sliding Window)
+Ordered delivery?	✅ Yes (Sequence Numbers)
+Header size?	✅ 20 bytes (minimum)
+Applications?	Web, Email, FTP, SSH
+
+🧠 Memory Trick
+"TCP is CAREFUL"
+C = Connection-oriented
+A = ACKs (Acknowledgments)
+R = Retransmits lost data
+E = Ensures ordered delivery
+F = Flow control
+U = Uses Sequence Numbers
+L = Large header (20 bytes)
