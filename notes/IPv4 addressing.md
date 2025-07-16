@@ -213,3 +213,49 @@ Class C	192.168.0.0 – 192.168.255.255	255.255.0.0 (/16)
 ✅ Defined in RFC 1918 (often called “RFC 1918 address space”).
 
 ✅ IPv6 was designed as the long-term fix for IPv4 exhaustion.
+
+
+Private IPv4 Addresses and NAT (Network Address Translation)
+📌 Why Private IPv4 Addresses Need NAT
+Private IPv4 addresses (like 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16) are not globally routable.
+
+When a device on a private network sends a packet to the Internet:
+
+The source IP is private.
+
+The destination IP is public.
+
+Routers and ISPs cannot forward packets with private source IPs. They must first be translated to public IPs using NAT.
+
+🌟 What is NAT?
+Network Address Translation (NAT) translates private IPv4 addresses into public IPv4 addresses.
+
+This allows multiple devices in a private network (intranet) to share a single or a few public IPv4 addresses for Internet access.
+
+NAT is usually done on the router connecting the internal network to the ISP.
+
+📊 Example Scenario
+Network 1 (10.0.0.0/8), Network 2 (172.16.0.0/16), and Network 3 (192.168.0.0/24) send packets to the Internet.
+
+Each packet’s private source IP (e.g., 10.0.0.5) is translated by the ISP router into a public IP before forwarding.
+
+The reverse happens for incoming traffic—public IPs are translated back to private IPs.
+
+🔥 Special Case: DMZ (Demilitarized Zone)
+DMZ is a part of the network where resources like web servers are placed.
+
+Devices in the DMZ use public IPv4 addresses so they’re accessible from the Internet.
+
+The router connecting the Intranet, DMZ, and Internet acts as:
+
+A NAT device (for translating private IPs).
+
+A firewall (for security, controlling traffic between zones).
+
+⚠️ Important Notes
+Private IPv4 addresses cannot be accessed directly from the Internet.
+
+NAT does not provide security by itself. The IETF considers it a workaround for IPv4 exhaustion, not a security feature.
+
+For educational labs, private IPv4 addresses are often used to avoid interfering with real-world public IPs.
+
