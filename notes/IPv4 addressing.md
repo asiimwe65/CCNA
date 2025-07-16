@@ -103,3 +103,72 @@ This is the network address for the host.
 ✔ Example:
 192.168.10.10 AND 255.255.255.0 = 192.168.10.0
 This tells the host it belongs to the 192.168.10.0/24 network.
+
+
+✅ IPv4 Transmission Types: Unicast, Broadcast, Multicast
+📌 1. Unicast – One-to-One Communication
+Definition: Unicast is when one device sends a packet directly to one specific device.
+
+Destination IP: A unique unicast address for a single recipient.
+
+Source IP: Always unicast since it comes from one device.
+
+Address Range: IPv4 unicast addresses are 1.0.0.1 to 223.255.255.255 (excluding special/reserved addresses).
+
+Example:
+
+Host 172.16.4.1 sends a packet to printer 172.16.4.253.
+
+Switch forwards the packet directly to 172.16.4.253.
+
+💡 All IPv4 communications in this course are unicast unless stated otherwise.
+
+📌 2. Broadcast – One-to-All Communication
+Definition: Broadcast sends a packet to all devices in the same network.
+
+Destination IP: All 1s in host bits. Two types:
+
+Limited Broadcast: 255.255.255.255 – sent to all hosts in the local network (not forwarded by routers).
+
+Directed Broadcast: Highest address in a subnet (e.g., 192.168.1.255 for 192.168.1.0/24) – routers forward it only to the target network.
+
+Example:
+
+Host 172.16.4.1 sends a limited broadcast to 255.255.255.255.
+
+Switch forwards the packet to all connected devices.
+
+⚠️ Broadcasts use network resources heavily since every device must process them.
+
+🔒 Routers block broadcasts by default, and Cisco IOS disables directed broadcasts for security (starting IOS 12.0).
+
+📌 3. Multicast – One-to-Many (Selected) Communication
+Definition: Multicast sends a single packet to multiple selected devices that are members of a multicast group.
+
+Destination IP: Reserved multicast range 224.0.0.0 to 239.255.255.255.
+
+How it Works:
+
+Devices subscribe to a multicast group to receive packets addressed to that group.
+
+Other devices ignore the packet.
+
+Example:
+
+Host 172.16.4.1 sends a multicast packet to 224.10.10.5.
+
+Switch forwards the packet, but only group members process it.
+
+📦 Use Case: Protocols like OSPF use multicast (224.0.0.5) so only OSPF-enabled routers process the packets.
+
+🌟 Key Takeaways
+Transmission	Destination	Sent To
+Unicast	Single IP Address	One specific device
+Broadcast	All 1s in host bits	All devices in the broadcast domain
+Multicast	224.0.0.0–239.255…	Only subscribed multicast clients
+
+Unicast = One-to-One
+
+Broadcast = One-to-All
+
+Multicast = One-to-Many (Selected)
