@@ -172,3 +172,44 @@ Unicast = One-to-One
 Broadcast = One-to-All
 
 Multicast = One-to-Many (Selected)
+
+
+
+
+📌 Public IPv4 Addresses
+Definition: Public IPv4 addresses are globally unique and routable on the Internet.
+
+They are assigned by ISPs and used for devices that need direct access to the internet.
+
+Example: A website’s server or an ISP router uses public IPv4 addresses.
+
+📌 Private IPv4 Addresses
+Definition: Private IPv4 addresses are not routable on the Internet.
+
+They are meant for use inside private networks (like homes, offices, or organizations).
+
+Devices with private addresses communicate internally and use NAT (Network Address Translation) to access the Internet through a public IP.
+
+🌟 Why Private Addresses Were Introduced
+In the mid-1990s, rapid growth of the Internet caused IPv4 address exhaustion.
+
+RFC 1918 defined private address blocks to conserve public IPv4 space.
+
+Private addresses are not unique globally; any organization can use them internally.
+
+💡 Long-term solution to IPv4 depletion: the adoption of IPv6.
+
+📊 Private IPv4 Address Ranges (RFC 1918)
+Private Block	Address Range	Subnet Mask
+Class A	10.0.0.0 – 10.255.255.255	255.0.0.0 (/8)
+Class B	172.16.0.0 – 172.31.255.255	255.240.0.0 (/12)
+Class C	192.168.0.0 – 192.168.255.255	255.255.0.0 (/16)
+
+🌟 Key Points
+✅ Public addresses are globally routable; private addresses are for internal use only.
+
+✅ Private addresses must use NAT to reach the Internet.
+
+✅ Defined in RFC 1918 (often called “RFC 1918 address space”).
+
+✅ IPv6 was designed as the long-term fix for IPv4 exhaustion.
